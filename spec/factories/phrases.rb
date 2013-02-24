@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :phrase do
-    content "MyText"
-    user_id 1
+    content "Oh no, eggys!"
+    user
   end
 end
