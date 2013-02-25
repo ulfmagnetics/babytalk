@@ -1,5 +1,13 @@
-%h3 User
-%p
-  User: #{@user.name}
-%p
-  Email: #{@user.email if @user.email}
+-provide(:title, "#{@user.name}'s Phrases")
+%h3
+  #{@user.name}'s Phrases
+
+.row
+  .span8
+    -if @user.phrases.any?
+      %ol.phrases
+        =render @phrases
+
+      =will_paginate @phrases
+
+
