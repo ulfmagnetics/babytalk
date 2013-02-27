@@ -20,6 +20,8 @@ describe Phrase do
     it { should_not be_valid }
   end
 
+  pending "must have content"
+
   describe "accessible attributes" do
     it "should not allow access to user_id" do
       expect { Phrase.new(user_id: user.id) }.to raise_error(ActiveModel::MassAssignmentSecurity::Error)

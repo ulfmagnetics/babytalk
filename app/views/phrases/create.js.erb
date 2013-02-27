@@ -1,0 +1,4 @@
+$(function() {
+  var html = "<%= escape_javascript(render('phrase', phrase: @phrase)) %>";
+  $('ol#phrases').prepend(html);
+});

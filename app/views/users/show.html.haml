@@ -4,8 +4,14 @@
 
 .row
   .span8
+    =form_for(@user.phrases.build, html: {class: 'form-inline'}, remote: true) do |f|
+      =render 'shared/error_messages', object: f.object
+
+      =f.text_field :content, placeholder: 'New phrase...'
+      =f.submit "Add", class: "btn btn-small btn-primary"
+
     -if @user.phrases.any?
-      %ol.phrases
+      %ol#phrases.unstyled
         =render @phrases
 
       =will_paginate @phrases
